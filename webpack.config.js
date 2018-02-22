@@ -36,16 +36,6 @@ module.exports = [{
       React: "React", react: "React", "window.react": "React", "window.React": "React"
     }),
   ],
-  resolve: {
-    extensions: ['', '.js'],
-    alias: {
-      "react": "src/dummyReact.js"
-    }
-  },
-  externals: {
-    // Use external version of React
-    "react": "React"
-  },
   module: {
     noParse: ["react"],
     loaders: [

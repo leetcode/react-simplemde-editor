@@ -55,11 +55,7 @@ module.exports = React.createClass({
         mode: 'markdown',
         triggers: {
           '@': function(stringToTest) {
-            return [
-              { text: 'Thomas ', displayText: 'Thomas' },
-              { text: 'Maria ', displayText: 'Maria' },
-              { text: 'Peter ', displayText: 'Peter' },
-            ];
+            return [];
           },
           '#': function(stringToTest) {
             return [

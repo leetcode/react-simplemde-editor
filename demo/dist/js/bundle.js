@@ -21942,7 +21942,7 @@
 	        mode: 'markdown',
 	        triggers: {
 	          '@': function (stringToTest) {
-	            return [{ text: 'Thomas ', displayText: 'Thomas' }, { text: 'Maria ', displayText: 'Maria' }, { text: 'Peter ', displayText: 'Peter' }];
+	            return [];
 	          },
 	          '#': function (stringToTest) {
 	            return [{ text: 'Two Sum ', displayText: 'Two Sum' }, { text: '3Sum ', displayText: '3Sum' }, { text: '4Sum ', displayText: '4Sum' }];
@@ -22043,7 +22043,29 @@
 				}
 			}
 
-			console.log(autoSuggestOptions);
+			var forEachHint = function(action) {
+				var hintsElement = document.querySelector(".CodeMirror-hints");
+				if(hintsElement) {
+					var hints = hintsElement.querySelectorAll(".CodeMirror-hint");
+					for(var i = 0; i < hints.length; i++) {
+						var hint = hints[i];
+						console.log(hint);
+						action(hint);
+					}
+				}
+			};
+
+			var setHintActive = function(event) {
+				forEachHint(function(hint) {
+					hint.classList.remove("CodeMirror-hint-active");
+				});
+				event.target.classList.add("CodeMirror-hint-active");
+			};
+
+			forEachHint(function(hint) {
+				console.log(hint);
+				hint.removeEventListener("mouseenter", setHintActive);
+			});
 
 			if(mode.name === autoSuggestOptions.mode && currentTrigger) {
 
@@ -22082,18 +22104,10 @@
 						};
 					}
 				});
-				var hints = document.querySelector(".CodeMirror-hints").querySelectorAll(".CodeMirror-hint");
-				console.log(hints);
-				for(var i = 0; i < hints.length; i++) {
-					var hint = hints[i];
-					hint.addEventListener("mouseenter", function(event) {
-						for(var j = 0; j < hints.length; j++) {
-							hints[j].classList.remove("CodeMirror-hint-active");
-						}
-						event.target.classList.add("CodeMirror-hint-active");
-					});
-				}
 
+				forEachHint(function(hint) {
+					hint.addEventListener("mouseenter", setHintActive);
+				});
 			}
 		});
 	});

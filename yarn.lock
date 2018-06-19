@@ -3159,9 +3159,9 @@ signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
 
-simplemde@^1.11.2:
+"simplemde@git://github.com/leetcode/simplemde-markdown-editor#v2.0":
   version "1.11.2"
-  resolved "https://registry.yarnpkg.com/simplemde/-/simplemde-1.11.2.tgz#a23a35d978d2c40ef07dec008c92f070d8e080e3"
+  resolved "git://github.com/leetcode/simplemde-markdown-editor#453a917f2f2fb3a97b815c2c9a3ec667f1ba55a2"
   dependencies:
     codemirror "*"
     codemirror-spell-checker "*"

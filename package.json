@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "react": "^15.5.x",
-    "simplemde": "git://github.com/wktang/simplemde-markdown-editor"
+    "simplemde": "git://github.com/leetcode/simplemde-markdown-editor#v2.0"
   },
   "main": "dist/simplemde-editor.js",
   "devDependencies": {

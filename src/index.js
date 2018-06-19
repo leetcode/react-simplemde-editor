@@ -53,18 +53,7 @@ module.exports = React.createClass({
       initialValue: this.props.value,
       autoSuggest: {
         mode: 'markdown',
-        triggers: {
-          '@': function(stringToTest) {
-            return [];
-          },
-          '#': function(stringToTest) {
-            return [
-              { text: 'Two Sum ', displayText: 'Two Sum' },
-              { text: '3Sum ', displayText: '3Sum' },
-              { text: '4Sum ', displayText: '4Sum' },
-            ];
-          },
-        },
+        triggers: this.props.mentions,
       },
     };
 

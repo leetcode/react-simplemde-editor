@@ -50,7 +50,11 @@ module.exports = React.createClass({
     const SimpleMDE = require('simplemde');
     const initialOptions = {
       element: document.getElementById(this.id),
-      initialValue: this.props.value
+      initialValue: this.props.value,
+      autoSuggest: {
+        mode: 'markdown',
+        triggers: this.props.mentions,
+      },
     };
 
     const allOptions = Object.assign({}, initialOptions, this.props.options);

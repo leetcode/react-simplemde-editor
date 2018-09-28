@@ -6,8 +6,11 @@
   "author": "Ben Lodge",
   "license": "MIT",
   "dependencies": {
-    "react": "^15.5.x",
-    "simplemde": "git://github.com/leetcode/simplemde-markdown-editor#v2.0"
+    "simplemde": "leetcode/simplemde-markdown-editor#v2.0"
+  },
+  "peerDependencies": {
+    "react": ">=15",
+    "react-dom": ">=15"
   },
   "main": "dist/simplemde-editor.js",
   "devDependencies": {
